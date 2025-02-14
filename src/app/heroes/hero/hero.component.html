@@ -1,0 +1,35 @@
+<h1>{{name}}</h1>
+
+<dl>
+  <td>Nombre:</td>
+  <dd>{{name}}</dd>
+
+  <td>Edad:</td>
+  <dd>{{age}}</dd>
+
+  <td>Método:</td>
+  <dd>{{ getHeroDescription ()}} </dd>
+
+  <td>Capitalizdo:</td>
+  <dd>{{capitalizedName}} </dd>
+
+  <!--el ngif es para borrar el boton es como un if-->
+</dl>
+<button
+  *ngIf="name !== 'spiderman'"
+ (click)="changeHero()"
+ class="btn btn-primary mx-2">   <!--el mx significa margen en el eje X-->
+  Cambiar nombre
+</button>
+
+<button
+*ngIf="age !== 28"
+(click)="changeAge()" class="btn btn-primary">
+  Cambiar edad
+</button>
+
+<!--el boton reset reestablece los botones de nombre y edad-->
+<button
+(click)="resetForm()"  class="btn btn-primary mx-2">
+Reset
+</button>
